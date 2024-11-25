@@ -1,0 +1,64 @@
+/* Reset de márgenes y estilos */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    height: 100%;
+    background: #000;
+    overflow: hidden;
+  }
+  
+  /* Fondo con imagen */
+  .background {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('fondo.png') no-repeat center center/cover;
+  }
+  
+  /* Overlay oscuro y transparente */
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Transparencia */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Estilo del texto */
+  .message-box {
+    text-align: center;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px 30px;
+    border-radius: 8px;
+    font-size: 1.8em;
+    font-style: italic;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Botón flotante de WhatsApp */
+  .whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    background-color: #25d366;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .whatsapp-float img {
+    width: 40px;
+    height: 40px;
+  }
+  
