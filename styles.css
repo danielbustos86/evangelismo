@@ -1,50 +1,147 @@
 /* Reset de márgenes y estilos */
 body, html {
-    margin: 0;
-    padding: 0;
-    font-family: 'Arial', sans-serif;
-    height: 100%;
-    background: #000;
-    overflow: hidden;
-  }
-  
-  /* Fondo con imagen */
-  .background {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    background: url('fondo.png') no-repeat center center/cover;
-  }
-  
-  /* Overlay oscuro y transparente */
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Transparencia */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  /* Estilo del texto */
-  .message-box {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  height: 100%;
+  background: #000;
+  overflow: hidden;
+}
+
+/* Header */
+.header {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.3); /* Fondo semitransparente */
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centrar horizontalmente */
+  padding: 20px 30px; /* Aumentar padding para hacerlo más alto */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 10; /* Aseguramos que esté por encima del fondo */
+  backdrop-filter: blur(5px); /* Difuminado */
+}
+
+.logo {
+  width: 60px; /* Logo más grande */
+  height: 60px;
+  margin-right: 15px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 2em; /* Título más grande */
+}
+
+/* Fondo con imagen */
+.background {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 200px); /* Ajuste para header y footer más grandes */
+  background: url('fondo.png') no-repeat center center/cover;
+}
+
+/* Overlay oscuro y transparente */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Transparencia */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Estilo del texto */
+.message-box {
+  text-align: center;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
+  padding: 20px;
+  border-radius: 8px;
+  font-size: 1.5em;
+  font-style: italic;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+  width: 90%; /* Ocupar casi todo el ancho */
+  max-width: 1200px;
+}
+
+/* Footer */
+.footer {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.3); /* Fondo semitransparente */
+  color: white;
+  text-align: center;
+  padding: 10px 15px;
+  box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.3);
+  position: relative;
+  bottom: 0;
+  font-size: 0.9em;
+  z-index: 10; /* Aseguramos que esté por encima del fondo */
+  backdrop-filter: blur(5px); /* Difuminado */
+}
+
+/* Botón flotante de WhatsApp */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  background-color: #25d366;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.whatsapp-float img {
+  width: 40px;
+  height: 40px;
+}
+
+/* Media Query para dispositivos pequeños (celulares) */
+@media (max-width: 768px) {
+  /* Header: Coloca logo y título en columnas */
+  .header {
+    flex-direction: column;
+    justify-content: center; /* Centrar todo en móviles */
     text-align: center;
-    color: #fff;
-    background: rgba(0, 0, 0, 0.7);
-    padding: 20px 30px;
-    border-radius: 8px;
-    font-size: 1.8em;
-    font-style: italic;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    padding: 20px; /* Aumentar espacio en móviles */
   }
-  
-  /* Botón flotante de WhatsApp */
+
+  .header h1 {
+    font-size: 1.5em; /* Ajustar tamaño de fuente */
+    margin-top: 10px;
+  }
+
+  .logo {
+    width: 50px; /* Logo más grande en móviles */
+    height: 50px;
+    margin-bottom: 10px;
+  }
+
+  /* Texto del mensaje: Ajuste de tamaño */
+  .message-box {
+    font-size: 1.2em; /* Reducir tamaño de fuente */
+    padding: 15px;
+  }
+
+  /* Footer: Texto más pequeño */
+  .footer {
+    font-size: 0.8em;
+  }
+
   .whatsapp-float {
     position: fixed;
-    bottom: 20px;
+    bottom: 80px; /* Ajusta este valor para que quede encima del footer */
     right: 20px;
     z-index: 1000;
     background-color: #25d366;
@@ -61,4 +158,17 @@ body, html {
     width: 40px;
     height: 40px;
   }
-  
+}
+
+/* Media Query para pantallas grandes */
+@media (min-width: 769px) {
+  /* Header: Logo y título alineados a la izquierda */
+  .header {
+    justify-content: flex-start;
+  }
+
+  .logo {
+    margin-right: 15px;
+    margin-left: 10px;
+  }
+}
